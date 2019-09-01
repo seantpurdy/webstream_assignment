@@ -1,0 +1,26 @@
+{
+  "name": "spgeolocation",
+  "version": "1.0.0",
+  "description": "Takes GeoLocation data counts occurrences and returns top 5 highest",
+  "main": "node server.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha */*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seantpurdy/webstream_assignment.git"
+  },
+  "author": "SeanPurdy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seantpurdy/webstream_assignment/issues"
+  },
+  "homepage": "https://github.com/seantpurdy/webstream_assignment#readme",
+  "dependencies": {
+    "httpdispatcher": "^2.1.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
