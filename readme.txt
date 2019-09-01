@@ -20,3 +20,8 @@ To stop:
 To run tests:
 1- cd to root directory of project
 2- Run command: npm test
+
+ASSUMPTIONS
+- Would want to provide not just key of top 5, but also the data along with that
+- Want to grab the data from the URL that you guys provided and not just from local file
+- Just sorted on the GeoLocation object count, did not attempt to apply secondary sorts when counts were equal
