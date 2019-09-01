@@ -81,6 +81,43 @@ describe('Test mapSorting module', function() {
         });
     });
 
+    describe('Test SortComparators', function() {
+        it('test Ascending <', function() {
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-10, -3) < 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-1, 1) < 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(0, 1) < 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(18, 33) < 0).to.equal(true);
+        });
+        it('test Ascending >', function() {
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-1, -3) > 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(4, -1) > 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(10, 0) > 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(44, 3) > 0).to.equal(true);
+        });
+        it('test Ascending =', function() {
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-3, -3)).to.equal(0);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(0, 0)).to.equal(0);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(10, 10)).to.equal(0);
+        });
+        it('test Descending <', function() {
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-1, -3) > 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(4, -1) > 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(10, 0) > 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(44, 3) > 0).to.equal(true);
+        });
+        it('test Descending >', function() {
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-10, -3) < 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-1, 1) < 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(0, 1) < 0).to.equal(true);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(18, 33) < 0).to.equal(true);
+        });
+        it('test Descending =', function() {
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(-3, -3)).to.equal(0);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(0, 0)).to.equal(0);
+            expect(GeoLocationRanker.SortComparators.Ascending.compare(10, 10)).to.equal(0);
+        });
+    });
+
     describe('Test MapSorter', function() {
         it('test single item', function() {
             let testMap = new Map();

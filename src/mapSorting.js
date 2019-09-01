@@ -38,6 +38,31 @@ var UniqueItemCountRanker = function() {
     };
 };
 
+class SortComparator {
+    constructor() {
+        if(!this.compare) {
+            throw new Error("Must implement compare(value1, value2) method");
+        }
+    }
+}
+
+class AscendingSortComparator extends SortComparator {
+
+    compare(value1, value2) {
+        if(value1 < value2) { return -1; }
+        else if(value1 > value2) { return 1; }
+        else { return 0; }
+   }
+}
+
+class DescendingSortComparator extends SortComparator {
+    compare(value1, value2) {
+        if(value1 > value2) { return -1; }
+        else if(value1 < value2) { return 1; }
+        else { return 0; }
+    }
+}
+
 /**
  * Sorting comparators can provide more complex object comparing ones
  * for now just Ascending and Descending. Provides compare method that will
@@ -47,20 +72,8 @@ var UniqueItemCountRanker = function() {
  */
 var SortComparators = (function() {
     return {
-         Ascending: {
-            compare: function(value1, value2) {
-                if(value1 < value2) { return -1; }
-                else if(value1 > value2) { return 1; }
-                else { return 0; }
-            }
-         },
-         Descending: {
-            compare: function(value1, value2) {
-                if(value1 > value2) { return -1; }
-                else if(value1 < value2) { return 1; }
-                else { return 0; }
-            }
-         }
+         Ascending: new AscendingSortComparator(),
+         Descending: new DescendingSortComparator()
     };
 })();
 
