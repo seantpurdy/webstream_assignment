@@ -9,5 +9,9 @@ To run:
 3- In a browser navigate to http://127.0.0.1:3000/geoLocation/ranking
    -Should see the response with the top 5
 
+To stop:
+1- in terminal where running just ctrl+c
+2- if prompted enter y to 'Terminate batch job'
+
 To run tests:
 1- Run command: npm test
